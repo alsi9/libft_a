@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ephantom <ephantom@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 15:18:45 by ephantom          #+#    #+#             */
-/*   Updated: 2021/10/22 15:23:50 by ephantom         ###   ########.fr       */
+/*   Created: 2021/10/22 15:11:27 by ephantom          #+#    #+#             */
+/*   Updated: 2021/10/25 15:23:55 by ephantom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f))(void *), void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-    
+	if (!lst)
+		return ;
+	if (del)
+		(*del)(lst->content);
+	free(lst);
 }

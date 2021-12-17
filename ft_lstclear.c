@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ephantom <ephantom@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 15:17:24 by ephantom          #+#    #+#             */
-/*   Updated: 2021/10/22 15:23:48 by ephantom         ###   ########.fr       */
+/*   Created: 2021/10/22 15:15:33 by ephantom          #+#    #+#             */
+/*   Updated: 2021/10/25 15:26:58 by ephantom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    
+	t_list	*po;
+
+	if (!lst)
+		return ;
+	while (*lst != NULL)
+	{
+		po = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = po;
+	}
 }

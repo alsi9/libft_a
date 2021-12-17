@@ -6,7 +6,7 @@
 #    By: ephantom <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/20 15:49:07 by ephantom          #+#    #+#              #
-#    Updated: 2021/10/20 18:05:44 by ephantom         ###   ########.fr        #
+#    Updated: 2021/10/25 13:13:20 by ephantom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,15 @@ SRCS	=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c\
 			ft_strmapi.c	ft_striteri.c	ft_itoa.c\
 			ft_split.c
 
+SRCS_B	=	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c\
+			ft_lstlast.c	ft_lstadd_back.c	ft_lstdelone.c\
+			ft_lstclear.c	ft_lstiter.c		ft_lstmap.c
+
 HEADER	=	libft.h
 
 OBJS	=	${SRCS:%.c=%.o}
+
+OBJS_B	=	${SRCS_B:%.c=%.o}
 
 CC		=	gcc
 
@@ -35,7 +41,7 @@ CFLAGS	=	-Wall -Wextra -Werror -I${HEADER}
 
 RM		=	 rm -f
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus
 
 all:		${NAME}
 
@@ -45,8 +51,11 @@ ${NAME}:	${OBJS} ${HEADER}
 %.o: 		%.c ${HEADER}
 			${CC} ${CFLAGS} -c $< -o $@
 
+bonus:		
+			@make OBJ='$(OBJS_B)' all
+
 clean:		
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${OBJS_B}
 
 fclean:		clean
 			${RM} ${NAME}
