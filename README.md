@@ -5,6 +5,9 @@
 <img src="./image.jpg" width=%80 height=%80>
 
 My first project at School 21.
+Цель проекта - реализация функций стандартной библиотеки Си.
+Описание функций представлено по следующей ссылке:
+https://microelectronics.dev/eboris/libft/wiki/Описание-функций?lang=ru-RU
 
 ## 0️⃣ Libc functions
 
