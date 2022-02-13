@@ -5,11 +5,19 @@
 <img src="./image.jpg" width=%80 height=%80>
 
 My first project at School 21.
+
 Цель проекта - реализация функций стандартной библиотеки Си.
 Описание функций представлено по следующей ссылке:
 https://microelectronics.dev/eboris/libft/wiki/Описание-функций?lang=ru-RU
 
+#### Для компиляции библиотеки нужно запустить команду <br>
+#### ```make all```  <br> 
+
 ## 0️⃣ Libc functions
+
+В этой первой части вы должны перекодировать набор функций libc, как определено в их man.
+Ваши функции должны будут представлять тот же прототип и поведение, что и исходные.
+Имена ваших функций должны иметь префикс ft_. 
 
 * [ft_memset](/ft_memset.c)
 * [ft_bzero](/ft_bzero.c)
@@ -38,6 +46,8 @@ https://microelectronics.dev/eboris/libft/wiki/Описание-функций?l
 * [ft_strdup](/ft_strdup.c)
 
 ## 1️⃣ Additional functions
+Во второй части вы должны закодировать набор функций, которые либо не включены в `libc`, либо включены в другую форму.
+Подробнее [en.subject.pdf](/en.subject.pdf)
 
 * [ft_substr](/ft_substr.c)
 * [ft_strjoin](/ft_strjoin.c)
@@ -52,6 +62,23 @@ https://microelectronics.dev/eboris/libft/wiki/Описание-функций?l
 
 ## 2️⃣ List functions (bonus part)
 
+### Функции для работы с односвязным списком
+
+Вы будете использовать следующую структуру для представления элементов вашего списка.
+
+```
+typedef struct  s_list
+{
+    void            *content;
+    struct s_list   *next;
+}               t_list;
+```
+
+Вот описание полей структуры `t_list`:
+
+- `content`: содержит адрес данных. `void *` позволяет хранить адреса любых данных.
+- `next`: содержит адрес следующего элемента списка связаных между собой структур или `NULL`, если это последний элемент.</br>
+  </br>
 * [ft_lstnew](/ft_lstnew.c)
 * [ft_lstdelone](/ft_lstdelone.c)
 * [ft_lstdel](/ft_lstdel.c)
