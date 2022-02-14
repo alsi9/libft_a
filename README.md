@@ -84,7 +84,10 @@ typedef struct  s_list
   </br>
 * [ft_lstnew](/ft_lstnew.c)
 * [ft_lstdelone](/ft_lstdelone.c)
-* [ft_lstdel](/ft_lstdel.c)
-* [ft_lstadd](/ft_lstadd.c)
+* [ft_lstaddback](/ft_lstadd_back.c)
+* [ft_lstaddfront](/ft_lstadd_front.c)
+* [ft_lstclear](/ft_lstclear.c)
+* [ft_lstlast](/ft_lstlast.c)
+* [ft_lstsize](/ft_lstsize.c)
 * [ft_lstiter](/ft_lstiter.c)
 * [ft_lstmap](/ft_lstmap.c)
